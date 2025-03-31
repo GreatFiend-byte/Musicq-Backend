@@ -30,7 +30,7 @@ const nodemailer = require('nodemailer');
 
 
 app.use(cors({
-    origin: `http://${server_front}:${port_f}`,
+    origin: `http://${server_front}`,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
@@ -492,7 +492,7 @@ app.post("/api/request-password-reset", async (req, res) => {
 
         // Generar token
         const resetToken = jwt.sign({ userId, email }, JWT_SECRET, { expiresIn: '1h' });
-        const resetLink = `http://${server_front}:${port_f}/reset-password?token=${resetToken}`;
+        const resetLink = `http://${server_front}/reset-password?token=${resetToken}`;
 
         // Configuración del correo con diseño profesional
         const mailOptions = {
