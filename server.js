@@ -30,7 +30,7 @@ const nodemailer = require('nodemailer');
 
 
 app.use(cors({
-    origin: `http://${server_front}`,
+    origin: `${server_front}`,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization'],
     credentials: true,
