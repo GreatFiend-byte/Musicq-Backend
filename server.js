@@ -492,7 +492,7 @@ app.post("/api/request-password-reset", async (req, res) => {
 
         // Generar token
         const resetToken = jwt.sign({ userId, email }, JWT_SECRET, { expiresIn: '1h' });
-        const resetLink = `http://${server_front}/reset-password?token=${resetToken}`;
+        const resetLink = `${server_front}/reset-password?token=${resetToken}`;
 
         // Configuración del correo con diseño profesional
         const mailOptions = {
